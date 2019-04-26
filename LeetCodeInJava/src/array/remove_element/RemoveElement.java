@@ -1,4 +1,4 @@
-package remove_element;
+package array.remove_element;
 
 import java.util.Arrays;
 
