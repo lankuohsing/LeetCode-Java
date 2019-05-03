@@ -5,4 +5,4 @@
  * @author lankuohsing
  *
  */
-package array.integer_to_roman;
+package string.integer_to_roman;

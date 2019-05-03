@@ -1,4 +1,4 @@
-package array.integer_to_roman;
+package string.integer_to_roman;
 
 import java.util.HashMap;
 import java.util.Map;
