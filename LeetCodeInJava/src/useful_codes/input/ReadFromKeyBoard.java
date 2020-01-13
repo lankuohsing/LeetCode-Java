@@ -1,4 +1,4 @@
-package input;
+package useful_codes.input;
 
 import java.util.ArrayList;
 import java.util.List;
