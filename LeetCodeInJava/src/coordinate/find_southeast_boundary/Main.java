@@ -1,5 +1,9 @@
 package coordinate.find_southeast_boundary;
 
+/*
+ * 给定平面直角坐标系上的点集合，寻找处于西南方向边界线上的点的子集合。
+ * 西南方向边界线的定义是：不在该边界线上的点，横纵坐标不会同时小于等于在该边界线上的点
+ */
 public class Main {
     public static void main(String[] args) {
         // TODO Auto-generated constructor stub
