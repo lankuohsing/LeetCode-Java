@@ -12,9 +12,9 @@ public class Solution {
         }
         for (int i = 0; i < nums.length; i++) {
             if (numToIndex.containsKey(target - nums[i]) && i != numToIndex.get(target - nums[i])) {
-                results[0] = nums[i];
+                results[0] = i;
                 results[1] = numToIndex.get(target - nums[i]);
-
+                break;
             }
         }
         return results;
