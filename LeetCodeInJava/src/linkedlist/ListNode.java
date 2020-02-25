@@ -26,6 +26,54 @@ public class ListNode {
     }
 }
 
+class SumOfTwo002 {
+
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode result = new ListNode(0);
+        ListNode head = result;
+        ListNode head1 = l1;
+        ListNode head2 = l2;
+        int jinwei = 0;
+        while (head1 != null || head2 != null) {
+            int val1 = 0;
+            int val2 = 0;
+            if (head1 != null) {
+                val1 = head1.val;
+            }
+            if (head2 != null) {
+                val2 = head2.val;
+            }
+            int sum = val1 + val2;
+            result.val = sum + jinwei;
+            if (result.val >= 10) {
+                result.val -= 10;
+                jinwei = 0;
+                jinwei += 1;
+            } else {
+                jinwei = 0;
+            }
+            if (head1 != null) {
+                head1 = head1.next;
+            }
+            if (head2 != null) {
+                head2 = head2.next;
+            }
+            if (head1 != null || head2 != null) {
+                result.next = new ListNode(0);
+                result = result.next;
+            } else {
+                if (jinwei > 0) {
+                    result.next = new ListNode(0);
+                    result = result.next;
+                    result.val += jinwei;
+                }
+            }
+        }
+
+        return head;
+    }
+}
+
 class Reverse206 {
 
     public ListNode reverseList(ListNode head) {
