@@ -34,7 +34,7 @@ class Solution094 {
 
 /*
  * 给定一个二叉树，返回所有从根节点到叶子节点的路径。 输出: ["1->2->5", "1->3"]
- * 
+ *
  * 解释: 所有根节点到叶子节点的路径为: 1->2->5, 1->3
  * https://leetcode-cn.com/problems/binary-tree-paths/
  */
@@ -58,6 +58,32 @@ class Solution257 {
                 constructPaths(root.left, path, paths);
                 constructPaths(root.right, path, paths);
             }
+        }
+
+    }
+}
+
+class Solution102 {
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> levels = new LinkedList<List<Integer>>();
+        int depth = 0;
+        getLevels(root, depth, levels);
+        return levels;
+    }
+
+    // 广度优先遍历
+    public void getLevels(TreeNode root, int depth, List<List<Integer>> levels) {
+        if (root != null) {
+            if (levels.size() == depth) {
+                levels.add(new LinkedList<Integer>());
+
+            }
+            levels.get(depth).add(root.val);
+
+            getLevels(root.left, depth + 1, levels);
+
+            getLevels(root.right, depth + 1, levels);
+
         }
 
     }
