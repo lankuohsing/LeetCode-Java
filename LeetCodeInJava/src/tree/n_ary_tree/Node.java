@@ -44,3 +44,24 @@ class Solution559 {
         }
     }
 }
+
+class Solution429 {
+    public List<List<Integer>> levelOrder(Node root) {
+        List<List<Integer>> levels = new ArrayList<List<Integer>>();
+        int depth = 0;
+        getLevels(root, levels, depth);
+        return levels;
+    }
+
+    public void getLevels(Node root, List<List<Integer>> levels, int depth) {
+        if (root != null) {
+            if (levels.size() == depth) {
+                levels.add(new ArrayList<Integer>());
+            }
+            levels.get(depth).add(root.val);
+            for (Node child : root.children) {
+                getLevels(child, levels, depth + 1);
+            }
+        }
+    }
+}
