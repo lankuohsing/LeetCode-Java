@@ -1,4 +1,4 @@
-package stack;
+package stack.two_hundred_and_twety_five;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package stack;
+package stack.two_hundred_and_twety_five;
 
 import java.util.LinkedList;
 import java.util.Queue;
