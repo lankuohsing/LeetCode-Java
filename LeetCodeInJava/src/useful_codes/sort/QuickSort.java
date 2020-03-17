@@ -29,8 +29,9 @@ public class QuickSort {
             if (left < right) {
                 array[left] = array[right];
                 left += 1;
+                System.out.println("swap");
             }
-            // 3.从做向右移动left，找到第一个大于等于基准值的array[left]
+            // 3.从左向右移动left，找到第一个大于等于基准值的array[left]
             while (array[left] < base && left < right) {
                 left += 1;
             }
@@ -38,6 +39,7 @@ public class QuickSort {
             if (left < right) {
                 array[right] = array[left];
                 right -= 1;
+                System.out.println("swap");
             }
         }
         // 上面的循环结束时，left==right
@@ -50,7 +52,7 @@ public class QuickSort {
         if (start < end) {
             // 分区操作，将一个数组分成两个分区，返回分区界限下标
             int index = partion(array, start, end);
-            // 多做分区进行快排
+            // 对左分区进行快排
             quickSort(array, start, index - 1);
             // 对右分区进行快排
             quickSort(array, index + 1, end);
