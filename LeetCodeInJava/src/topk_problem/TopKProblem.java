@@ -2,12 +2,13 @@ package topk_problem;
 
 public class TopKProblem {
     public static void main(String[] args) {
-        int[] a = { 1, 6, 8, 7, 3, 5, 16, 4, 8, 36, 13, 44 };
-//        int[] a = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
-//        int[] a = { 4, 3, 3, 3, 2, 1 };
-        int k = 10;
+//        int[] a = { 1, 6, 8, 7, 3, 5, 16, 4, 8, 36, 13, 44 };
+        int[] a = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+//        int[] a = { 1, 6, 8, 7, 3, 5, 16, 4 };
+        int k = 3;
 //        topKByBubleSort(a, k);
-        topKByQuickSort(a, 0, a.length - 1, k);
+//        topKByQuickSort(a, 0, a.length - 1, k);
+        topKSByQuickSort(a, 0, a.length - 1, k);
         for (int i = 0; i < a.length; i++) {
             System.out.print(a[i] + ", ");
         }
@@ -69,7 +70,7 @@ public class TopKProblem {
         if (start < end) {
             // 分区操作，将一个数组分成两个分区，返回分区界限下标
             int index = partion(array, start, end);
-            System.out.println(index);
+//            System.out.println(index);
             // 第k小的数在左分区
             if (index > k - 1) {
                 // 对左分区进行快排
@@ -79,6 +80,31 @@ public class TopKProblem {
                 if (index < k - 1) {
                     // 对右分区进行快排
                     topKByQuickSort(array, index + 1, end, k);
+                }
+
+            }
+
+        }
+    }
+
+    // 采用改良的冒泡法，复杂度O(n)
+    public static void topKSByQuickSort(int[] array, int start, int end, int k) {
+
+        if (start < end) {
+            // 分区操作，将一个数组分成两个分区，返回分区界限下标
+            int index = partion(array, start, end);
+            System.out.println(index);
+            // 第k小的数在左分区
+            if (index > k - 1) {
+                // 对左分区进行快排
+                topKSByQuickSort(array, start, index - 1, k);
+            } else {
+                // 第k小的数在右分区
+                if (index <= k - 1) {
+                    // 对左分区进行快排
+                    topKSByQuickSort(array, start, index - 1, k);
+                    // 对右分区进行快排
+                    topKSByQuickSort(array, index + 1, end, k);
                 }
 
             }
