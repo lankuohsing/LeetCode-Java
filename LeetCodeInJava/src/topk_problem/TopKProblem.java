@@ -12,6 +12,7 @@ public class TopKProblem {
 
     }
 
+    // 采用改良的冒泡法，复杂度O(nlogk)
     public static void topKByBubleSort(int[] array, int k) {
         for (int i = 0; i < k; i++) {
             for (int j = array.length - 1; j > i; j--) {
