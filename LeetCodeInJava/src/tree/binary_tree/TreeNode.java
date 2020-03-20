@@ -3,6 +3,7 @@ package tree.binary_tree;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 public class TreeNode {
     int val;
@@ -15,6 +16,9 @@ public class TreeNode {
 
 }
 
+/*
+ * 二叉树的中序遍历
+ */
 class Solution094 {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> results = new ArrayList();
@@ -63,6 +67,9 @@ class Solution257 {
     }
 }
 
+/*
+ * 二叉树的层次遍历
+ */
 class Solution102 {
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> levels = new LinkedList<List<Integer>>();
@@ -86,5 +93,45 @@ class Solution102 {
 
         }
 
+    }
+}
+
+/*
+ * 翻转二叉树
+ */
+class Solution226 {
+    public TreeNode invertTree(TreeNode root) {
+        TreeNode root1 = root;
+        invertTreeNotRecursive(root1);
+        return root1;
+    }
+
+    public void invertTreeRecursive(TreeNode root) {
+        if (root != null) {
+            TreeNode tempNode = root.left;
+            root.left = root.right;
+            root.right = tempNode;
+            invertTreeRecursive(root.left);
+            invertTreeRecursive(root.right);
+        }
+    }
+
+    public void invertTreeNotRecursive(TreeNode root) {
+        Stack<TreeNode> stack1 = new Stack<TreeNode>();
+        while (true) {
+            while (root != null) {
+                TreeNode tempNode = root.left;
+                root.left = root.right;
+                root.right = tempNode;
+                stack1.push(root);
+                root = root.left;
+            }
+            if (stack1.isEmpty()) {
+                break;
+            }
+            root = stack1.pop();
+            root = root.right;
+
+        }
     }
 }
