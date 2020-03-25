@@ -8,7 +8,8 @@ import java.util.List;
  * 0/1背包问题
  * 问题描述：有n件物品和容量为m的背包 给出i件物品的重量以及价值 求解让装入背包的物品重量不超过背包容量 且价值最大 。
  * 特点:这是最简单的背包问题，特点是每个物品只有一件供你选择放还是不放。
- * https://www.jianshu.com/p/50af9094a2ac
+ * https://zhuanlan.zhihu.com/p/30959069
+ * https://blog.csdn.net/huanghanqian/article/details/79810850
  */
 public class knapsack1 {
     public static void main(String[] args) {
