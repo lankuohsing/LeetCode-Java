@@ -12,7 +12,7 @@ public class Solution {
         int start = 0;
         int end = nums.length - 1, middle;
         while (start <= end) {
-            middle = (start + end) / 2;
+            middle = start + (end - start) / 2;// 防止溢出
             if (nums[middle] < target) {
                 start = middle + 1;
             } else {
