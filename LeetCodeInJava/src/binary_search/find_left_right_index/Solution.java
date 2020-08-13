@@ -1,5 +1,8 @@
 package binary_search.find_left_right_index;
 
+/*
+升序数组中，查找target值区域左右边界值。
+ */
 public class Solution {
     public int findLeftIndex(int nums[], int target) {
         // 循环继续的条件：start <= end
@@ -38,7 +41,7 @@ public class Solution {
         int start = 0;
         int end = nums.length - 1, middle;
         while (start <= end) {
-            middle = (start + end) / 2;
+            middle = start + (end - start) / 2;
             if (nums[middle] <= target) {
                 start = middle + 1;
             } else {
@@ -57,6 +60,6 @@ public class Solution {
             }
         }
 
-        return right;
+        return right == -1 ? right : right - 1;//
     }
 }
