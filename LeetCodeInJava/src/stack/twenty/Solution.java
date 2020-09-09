@@ -1,5 +1,7 @@
 package stack.twenty;
 
+import java.util.Stack;
+
 class Solution {
     public boolean isValid(String s) {
         Stack<Character> strStack = new Stack<Character>();
