@@ -13,6 +13,9 @@ class Solution {
     }
 
     private void dfs(int start, int n, int k) {
+        if (n - start + 1 < k - oneResult.size()) {
+            return;// 剪枝
+        }
         if (start > n) {
             if (oneResult.size() == k) {
                 results.add(new ArrayList<Integer>(oneResult));
